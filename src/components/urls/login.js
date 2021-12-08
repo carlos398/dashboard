@@ -24,15 +24,18 @@ export const Login = () =>{
         const data = await rest.json()
         console.log(data.token)
 
-        setEmail('')
-        setPassword('')
+        if(data.token){
+            navigate('/dash')
+            setEmail('')
+            setPassword('')
+            
+        }
+        else{
+            alert('someting is wrong')
+        }
     }
 
-
-    const login = () =>{
-        navigate('/dash')
-    };
-
+    
     return(
         <div className="login">
             <form className="LoginForm" onSubmit={UserLogin}>
