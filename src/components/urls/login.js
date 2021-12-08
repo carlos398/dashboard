@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
+import { Toaster, toast  } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import "../../App.css";
 
-export const Login = () =>{
+export const Login = (props) =>{
 
     const navigate = useNavigate();
 
@@ -21,21 +22,20 @@ export const Login = () =>{
                 'password' : password
             })
         })
+
         const data = await rest.json()
-        console.log(data.token)
 
         if(data.token){
+            props.userToken(data.token)
             navigate('/dash')
-            setEmail('')
-            setPassword('')
-            
         }
         else{
-            alert('someting is wrong')
+            toast.error('email or password are wrong')
         }
+        
+        
     }
 
-    
     return(
         <div className="login">
             <form className="LoginForm" onSubmit={UserLogin}>
@@ -61,6 +61,7 @@ export const Login = () =>{
                 </div>
                 <button>Login</button>
             </form>
+            <Toaster/>
         </div>
     )
 };

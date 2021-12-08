@@ -40,6 +40,7 @@
   "devDependencies": {
     "chart.js": "^3.6.1",
     "faker": "^5.5.3",
+    "react-hot-toast": "^2.1.1",
     "react-router-dom": "^6.0.2"
   }
 }
