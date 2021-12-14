@@ -4,34 +4,26 @@ import { Users } from "../views/users";
 import "../../App.css";
 
 export const DashBoard = (props) =>{
-    if(props.token.length > 10){
-        console.log(1)
-        return(
-            <section className="dash">
-                <div className="dash-one">
-                    <Users/>
+    const Token = props.token
+    return(
+        <section className="dash">
+            <div className="dash-one">
+                <Users token = {Token}/>
+            </div>
+            <div className="dash-two">
+                <div>
+                    <Test token = {Token}/>
                 </div>
-                <div className="dash-two">
-                    <div>
-                        <Test/>
-                    </div>
-                    <div>
-                        <Test/>
-                    </div>
-                    <div>
-                        <Test/>
-                    </div>
-                    <div>
-                        <Test/>
-                    </div>
+                <div>
+                    <Test token = {Token}/>
                 </div>
-            </section>
-        )
-    }
-    else{
-        console.log(2)
-        return(
-            <h2>You dont goin to be here</h2>
-        )
-    }
+                <div>
+                    <Test token = {Token}/>
+                </div>
+                <div>
+                    <Test token = {Token}/>
+                </div>
+            </div>
+        </section>
+    )
 }
