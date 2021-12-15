@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Toaster, toast  } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../../App.css";
 
 export const Login = (props) =>{
@@ -60,6 +60,9 @@ export const Login = (props) =>{
                     </label>
                 </div>
                 <button>Login</button>
+                <br/>
+                <br/>
+                <h5>you dont have a acount? <Link to={'/register'}>CREATE ONE HERE</Link></h5>
             </form>
             <Toaster/>
         </div>
